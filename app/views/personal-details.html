@@ -28,6 +28,33 @@
         autocomplete: "name"
       }) }}
 
+      <h2 class="govuk-heading-m">Contact details</h2>
+
+      {{ govukInput({
+        label: {
+          text: "Email address"
+        },
+        id: "email",
+        name: "email",
+        value: data.email,
+        errorMessage: errors.email,
+        type: "email",
+        autocomplete: "email",
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "UK telephone number"
+        },
+        id: "telephone-number",
+        name: "telephoneNumber",
+        value: data.telephoneNumber,
+        errorMessage: errors.telephoneNumber,
+        type: "tel",
+        autocomplete: "tel"
+      }) }}
+
       <h2 class="govuk-heading-m">Address</h2>
 
       {{ govukInput({
