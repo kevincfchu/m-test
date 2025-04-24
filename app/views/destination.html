@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Choose destination" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/destination" method="post">
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "/"
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "destination",
+        name: "destination",
+        fieldset: {
+          legend: {
+            text: "Choose your destination",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Please select your preferred space travel destination"
+        },
+        errorMessage: errors.destination,
+        items: [
+          {
+            value: "moon",
+            text: "The Moon",
+            hint: {
+              text: "Travel time: 3 days"
+            },
+            checked: (data.destination === "moon")
+          },
+          {
+            value: "mars",
+            text: "Mars",
+            hint: {
+              text: "Travel time: 7 months"
+            },
+            checked: (data.destination === "mars")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %} 

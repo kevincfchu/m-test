@@ -6,14 +6,58 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
-
     <h1 class="govuk-heading-xl">
       {{ serviceName }}
     </h1>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+    <p class="govuk-body-l">Use this service to apply for interplanetary travel to the Moon or Mars.</p>
+
+    <p class="govuk-body">Use this service to:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>book your travel to space destinations</li>
+      <li>select between the Moon and Mars as your destination</li>
+      <li>provide your details for your journey</li>
+    </ul>
+
+    <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at convallis nunc. Vivamus elementum urna quis orci tincidunt, in finibus nulla tempus.</p>
+
+    {{ govukButton({
+      text: "Start now",
+      href: "/destination",
+      isStartButton: true
+    }) }}
+
+    <h2 class="govuk-heading-m">Before you start</h2>
+
+    <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac tortor ac nisi pharetra molestie. Praesent at eros sit amet ex maximus elementum non quis risus.</p>
+
+    <p class="govuk-body">Maecenas eget dui nec magna varius vehicula ac ut nisi. Nulla facilisi. Donec tincidunt libero eu mi finibus, vel eleifend mi fringilla.</p>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">Related content</h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href="#">
+              Space travel regulations
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Health requirements for space travel
+            </a>
+          </li>
+          <li>
+            <a href="#" class="govuk-!-font-weight-bold">
+              More <span class="govuk-visually-hidden">related content</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
   </div>
 </div>
 

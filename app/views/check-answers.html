@@ -1,0 +1,95 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Check your answers" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "/personal-details"
+    }) }}
+
+    <h1 class="govuk-heading-l">Check your answers</h1>
+
+    <h2 class="govuk-heading-m">Your destination</h2>
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Destination"
+          },
+          value: {
+            text: data.destination | capitalize
+          },
+          actions: {
+            items: [
+              {
+                href: "/destination",
+                text: "Change",
+                visuallyHiddenText: "destination"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">Personal details</h2>
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: data.fullName
+          },
+          actions: {
+            items: [
+              {
+                href: "/personal-details",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Address"
+          },
+          value: {
+            html: data.addressLine1 + "<br>" + 
+                  (data.addressLine2 if data.addressLine2 else "") + 
+                  (("<br>" + data.addressTown) if data.addressTown else "") + 
+                  (("<br>" + data.addressCounty) if data.addressCounty else "") + 
+                  (("<br>" + data.addressPostcode) if data.addressPostcode else "")
+          },
+          actions: {
+            items: [
+              {
+                href: "/personal-details",
+                text: "Change",
+                visuallyHiddenText: "address"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <form action="/confirmation" method="post">
+      {{ govukButton({
+        text: "Confirm and continue"
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %} 

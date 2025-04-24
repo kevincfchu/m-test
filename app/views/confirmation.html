@@ -1,0 +1,28 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Application complete" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukPanel({
+      titleText: "Application complete",
+      html: "Your reference number<br><strong>HDJ2123F</strong>"
+    }) }}
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+    <p class="govuk-body">We've sent your application to our team.</p>
+
+    <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum dignissim libero, ut varius eros vehicula ut. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+    <p class="govuk-body">
+      <a href="/" class="govuk-link">Return to the start page</a>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %} 
